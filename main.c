@@ -3,13 +3,13 @@
 int main(int ac, char **av)
 {
     char *line;
-    /*char **cmd;*/
+    char **cmd;
     int stts;
     (void) ac;
     (void) av;
 
     line = NULL;
-    /*cmd = NULL;*/
+    cmd = NULL;
     stts = 0;
     while (1)
     {
@@ -22,10 +22,13 @@ int main(int ac, char **av)
             }
             return (stts);
         }
-        printf("%s", line);
-        free(line);
 
-        /*cmd = tokenize(line);
-        stts = _exec(command, av);*/
+        cmd = tokenize(line);
+        if (cmd == NULL)
+        {
+            continue;
+        }
+
+        /*stts = _exec(command, av);*/
     }
 }
