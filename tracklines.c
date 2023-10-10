@@ -8,7 +8,10 @@ char *track_lines(void)
 
     line = NULL;
     len = 0;
-    write(STDOUT_FILENO, "$ ", 2);
+    if (isatty(STDIN_FILENO))
+    {
+        write(STDOUT_FILENO, "$ ", 2);
+    }
     llen = getline(&line, &len, stdin);
 
     if (llen == -1)

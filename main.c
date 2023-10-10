@@ -16,7 +16,10 @@ int main(int ac, char **av)
         line = track_lines();
         if (line == NULL) /* Bach ila clickina ctrl+D Ikhrej*/
         {
-            write(STDOUT_FILENO, "\n", 1);
+            if (isatty(STDIN_FILENO))
+            {
+                write(STDOUT_FILENO, "\n", 1);
+            }
             return (stts);
         }
         printf("%s", line);
