@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <unistd.h>
+
+int main(void)
+{
+    /**pid_t my_pid;
+
+    my_pid = getppid();
+    printf("%u\n", my_pid);
+    return (0);**/
+
+    char *cmd[] = {"ls", "-l", "/usr/", NULL};
+
+    printf("Before execve\n");
+    if (execve("/bin/ls", cmd, NULL) == -1)
+    {
+        perror("error:");
+    }
+    printf("After Execve\n");
+    return (0);
+
+}

@@ -12,9 +12,12 @@
 #include <fcntl.h>
 
 #define DELIMI " \t\n"
+extern char **environ;
 
 char *track_lines(void);
 char **tokenize(char *line);
+void freestrarr(char **array);
+int _exec(char **cmd, char **av);
 
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);

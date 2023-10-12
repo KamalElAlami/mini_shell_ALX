@@ -6,7 +6,6 @@ int main(int ac, char **av)
     char **cmd;
     int stts;
     (void) ac;
-    (void) av;
 
     line = NULL;
     cmd = NULL;
@@ -29,6 +28,6 @@ int main(int ac, char **av)
             continue;
         }
 
-        /*stts = _exec(command, av);*/
+        stts = _exec(cmd, av);
     }
 }
