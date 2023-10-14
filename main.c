@@ -4,12 +4,13 @@ int main(int ac, char **av)
 {
     char *line;
     char **cmd;
-    int stts;
+    int stts, cnter;
     (void) ac;
 
     line = NULL;
     cmd = NULL;
     stts = 0;
+    cnter = 0;
     while (1)
     {
         line = track_lines();
@@ -21,6 +22,7 @@ int main(int ac, char **av)
             }
             return (stts);
         }
+        cnter++;
 
         cmd = tokenize(line);
         if (cmd == NULL)
@@ -28,6 +30,6 @@ int main(int ac, char **av)
             continue;
         }
 
-        stts = _exec(cmd, av);
+        stts = _exec(cmd, av, cnter);
     }
 }
