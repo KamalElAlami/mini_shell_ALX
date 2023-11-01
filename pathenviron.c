@@ -27,7 +27,6 @@ char *_pathenviron(char *cmd)
             direc = strtok(NULL, ":");
         }
     }
-
     if (!penv)
     {
         return (NULL);
@@ -39,7 +38,8 @@ char *_pathenviron(char *cmd)
         {
             if (stat(cmd, &stt) == 0)
             {
-                return (_strdup(cmd));
+                return (free(penv), _strdup(cmd));
+    
             }
             else
             {

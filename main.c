@@ -29,7 +29,7 @@ int main(int ac, char **av)
         {
             continue;
         }
-
         stts = _exec(cmd, av, cnter);
+        
     }
 }
