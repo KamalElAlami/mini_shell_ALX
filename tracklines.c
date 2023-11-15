@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * track_lines - Read and track input lines
+ *
+ * This function reads input lines from the user, tracks their content, and
+ * returns the input as a dynamically allocated string.
+ *
+ * Return: A dynamically allocated string containing the user's input.
+ */
 char *track_lines(void)
 {
     char *line;
